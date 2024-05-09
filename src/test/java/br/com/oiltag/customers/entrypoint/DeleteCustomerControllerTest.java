@@ -24,7 +24,7 @@ class DeleteCustomerControllerTest {
     @DisplayName("Deve deletar o custumer com sucesso.")
     public void deleteCustomerTest() throws Exception {
         mvc.perform(MockMvcRequestBuilders
-                        .delete("/api/v1/customers/{uuid}", UUID.randomUUID().toString())
+                        .delete("/api/v1/customers/{uuid}", "725dbb58-71ab-456b-8684-aded4cb32bbf")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent());
     }
