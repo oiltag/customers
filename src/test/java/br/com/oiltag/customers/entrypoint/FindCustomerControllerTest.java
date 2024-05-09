@@ -32,6 +32,16 @@ class FindCustomerControllerTest {
     }
 
     @Test
+    @DisplayName("Deve retornar cliente não encontrado.")
+    public void cannotFindClientTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders
+                        .get("/api/v1/customers/{uuid}", "6aa7a255-1c72-454b-83b1-e5e20cebf616")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+
+    }
+
+    @Test
     @DisplayName("Deve retornar BadRequest se URI Variable ausente.")
     public void badRequestTest() throws Exception {
         mvc.perform(MockMvcRequestBuilders
