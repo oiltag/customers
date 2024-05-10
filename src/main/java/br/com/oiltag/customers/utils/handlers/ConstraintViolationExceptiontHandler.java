@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +14,8 @@ import java.util.List;
 public class ConstraintViolationExceptiontHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<List> handleConstraintViolationException(ConstraintViolationException e) {
-        ArrayList<Object> errors = new ArrayList<>(e.getConstraintViolations().size());
-        e.getConstraintViolations().forEach(constraintViolation -> {
-            errors.add(constraintViolation.getPropertyPath() + " : " + constraintViolation.getMessage());
-        });
-        return new ResponseEntity(errors, HttpStatus.BAD_REQUEST);
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public void handleConstraintViolationException(ConstraintViolationException e) {
     }
 
 }

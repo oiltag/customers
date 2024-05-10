@@ -35,7 +35,7 @@ class CreateCustomerControllerTest {
     }
 
     @Test
-    @DisplayName("Nome deve ser conter ao menos 3 caracteres.")
+    @DisplayName("Nome deve conter ao menos 3 caracteres.")
     public void badRequestNomePequenoTest() throws Exception {
         CustomerDTO customerDTO = CustomerDTO.builder().name("Th").build();
         String requestBody = objectMapper.writeValueAsString(customerDTO);
@@ -49,7 +49,7 @@ class CreateCustomerControllerTest {
     }
 
     @Test
-    @DisplayName("Nome deve ser conter no máximo 100 caracteres.")
+    @DisplayName("Nome deve conter no máximo 100 caracteres.")
     public void badRequestNomeGrandeTest() throws Exception {
         CustomerDTO customerDTO = CustomerDTO.builder()
                 .name("Kubishka Valeriya Kasyanovna (Кубышка Валерия Касьяновна) Kubishka Valeriya Kasyanovna (Кубышка Валерия Касьяновна)")
