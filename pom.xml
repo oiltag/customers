@@ -16,6 +16,10 @@
     <name>customers</name>
     <description>customers microservice</description>
 
+    <properties>
+        <server.port>8080</server.port>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -36,19 +40,18 @@
                 <version>1.4</version>
                 <executions>
                     <execution>
-                        <phase>integration-test</phase>
+                        <id>integration-test</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
+                        <configuration>
+                            <apiDocsUrl>http://localhost:${server.port}/api/v1/docs</apiDocsUrl>
+                            <outputFileName>openapi.json</outputFileName>
+                            <outputDir>${project.build.directory}</outputDir>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <apiDocsUrl>http://localhost:8080/v3/api-docs</apiDocsUrl>
-                    <outputFileName>openapi.json</outputFileName>
-                    <outputDir>${project.build.directory}</outputDir>
-                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
