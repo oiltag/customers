@@ -1,6 +1,6 @@
 package br.com.oiltag.customers.usecase.impl;
 
-import br.com.oiltag.customers.entrypoint.CustomerDTO;
+import br.com.oiltag.customers.entrypoint.dto.CustomerDTO;
 import br.com.oiltag.customers.model.Customer;
 import br.com.oiltag.customers.repository.CustomerRepository;
 import br.com.oiltag.customers.usecase.CustomerCrudOperations;

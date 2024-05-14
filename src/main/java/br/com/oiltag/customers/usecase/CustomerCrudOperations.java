@@ -1,6 +1,6 @@
 package br.com.oiltag.customers.usecase;
 
-import br.com.oiltag.customers.entrypoint.CustomerDTO;
+import br.com.oiltag.customers.entrypoint.dto.CustomerDTO;
 
 import java.util.List;
 import java.util.UUID;

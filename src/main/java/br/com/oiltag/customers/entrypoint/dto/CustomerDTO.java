@@ -1,4 +1,4 @@
-package br.com.oiltag.customers.entrypoint;
+package br.com.oiltag.customers.entrypoint.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;

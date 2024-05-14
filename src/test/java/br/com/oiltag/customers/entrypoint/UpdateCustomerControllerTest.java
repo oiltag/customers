@@ -1,5 +1,6 @@
 package br.com.oiltag.customers.entrypoint;
 
+import br.com.oiltag.customers.entrypoint.dto.CustomerDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

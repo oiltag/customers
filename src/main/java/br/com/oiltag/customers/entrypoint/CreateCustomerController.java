@@ -1,5 +1,6 @@
 package br.com.oiltag.customers.entrypoint;
 
+import br.com.oiltag.customers.entrypoint.dto.CustomerDTO;
 import br.com.oiltag.customers.usecase.CustomerCrudOperations;
 import br.com.oiltag.customers.usecase.impl.CustomerUsecaseImpl;
 import io.swagger.v3.oas.annotations.tags.Tag;
