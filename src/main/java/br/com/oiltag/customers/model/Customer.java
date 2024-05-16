@@ -24,7 +24,7 @@ public class Customer {
     @JsonProperty(value = "customer_id")
     private UUID customerId;
 
-    @NotNull
-    @Size(min = 3, max = 100)
+    private String email;
     private String name;
+    private String phone;
 }

@@ -26,7 +26,7 @@ class UpdateCustomerControllerTest {
     @Test
     @DisplayName("Cliente deve ser atualizado com sucesso.")
     public void updateCustomerTest() throws Exception {
-        CustomerDTO customerDTO = new CustomerDTO(UUID.randomUUID(), "Thiago dos Santos");
+        CustomerDTO customerDTO = new CustomerDTO(UUID.randomUUID(), "email@dominio.com","Thiago dos Santos","11954682456");
         String requestBody = objectMapper.writeValueAsString(customerDTO);
 
         mvc.perform(MockMvcRequestBuilders
@@ -40,7 +40,7 @@ class UpdateCustomerControllerTest {
     @Test
     @DisplayName("Deve retornar BadRequest se URI Variable ausente.")
     public void missingUriVariableTest() throws Exception {
-        CustomerDTO customerDTO = new CustomerDTO(UUID.randomUUID(), "Thiago dos Santos");
+        CustomerDTO customerDTO = new CustomerDTO(UUID.randomUUID(),"email@dominio.com", "Thiago dos Santos","11952463578");
         String requestBody = objectMapper.writeValueAsString(customerDTO);
 
         mvc.perform(MockMvcRequestBuilders
