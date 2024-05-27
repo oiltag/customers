@@ -25,7 +25,10 @@ class CreateCustomerControllerTest {
     @Test
     @DisplayName("Cliente deve ser cadastrado com sucesso.")
     public void createCustomer() throws Exception {
-        CustomerDTO customerDTO = CustomerDTO.builder().name("Thiago dos Santos").build();
+        CustomerDTO customerDTO = CustomerDTO.builder()
+                .email("thisanti@hotmail.com")
+                .name("Thiago dos Santos")
+                .build();
         String requestBody = objectMapper.writeValueAsString(customerDTO);
         mvc.perform(MockMvcRequestBuilders
                         .post("/api/v1/customers")

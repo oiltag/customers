@@ -16,15 +16,18 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@IdClass(CustomerId.class)
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "customer_id", nullable = false)
+    @Column(name = "customer_id", unique = true, nullable = false)
     @JdbcTypeCode(SqlTypes.UUID)
     @JsonProperty(value = "customer_id")
     private UUID customerId;
-
+    @Id
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
+
     private String name;
     private String phone;
 }

@@ -35,7 +35,7 @@ public class CustomerUsecaseImpl implements CustomerCrudOperations {
     @Cacheable(cacheNames = "customers")
     public CustomerDTO getById(UUID uuid) {
         log.info("executando getById");
-        Customer customer = customerRepository.findById(uuid).orElseThrow(EntityNotFoundException::new);
+        Customer customer = customerRepository.findByCustomerId(uuid).orElseThrow(EntityNotFoundException::new);
         return customerMapper.customerToCustomerDTO(customer);
     }
 
@@ -57,7 +57,7 @@ public class CustomerUsecaseImpl implements CustomerCrudOperations {
     @Override
     public void delete(UUID uuid) {
         log.info("Customer deleted. Id: {}", uuid);
-        Customer customer = customerRepository.findById(uuid).orElseThrow(EntityNotFoundException::new);
+        Customer customer = customerRepository.findByCustomerId(uuid).orElseThrow(EntityNotFoundException::new);
         customerRepository.delete(customer);
     }
 }
